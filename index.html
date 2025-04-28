@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Text Adventure</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+    #game { background: white; padding: 20px; border-radius: 10px; }
+    button { margin-top: 10px; }
+  </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+  <div id="game">
+    <h1>Welcome to the Adventure!</h1>
+    <p id="story">You are standing at a crossroads. Where do you want to go?</p>
+    <button onclick="choose('left')">Go Left</button>
+    <button onclick="choose('right')">Go Right</button>
+  </div>
+
+  <script>
+    function choose(direction) {
+      const story = document.getElementById('story');
+      if (direction === 'left') {
+        story.textContent = "You meet a dragon! 🐉 Game Over.";
+      } else if (direction === 'right') {
+        story.textContent = "You find a treasure chest! 🪙 You Win!";
+      }
+    }
+  </script>
 </body>
 </html>
